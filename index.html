@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>calculator</title>
+</head>
+<body bgcolor="green">
+<center style="margin-top:50px;">
+<form method="post" action="cal_action.php">
+<table border="3" cellspacing="10" cellpadding="15">
+<tr>
+<td> First Number</td>
+<td><input type="text" name="fno" required placeholder="First number" value="<?php echo @$_GET['a'];?>"></td>
+</tr>
+<tr>
+<td> Second Number</td>
+<td><input type="text" name="sno" required placeholder="Second number" value="<?php echo @$_GET['b'];?>"></td>
+</tr>
+<tr>
+
+<td>Select Operation</td>
+<td>
+<input type="radio" name="op" value="add" <?php if(@$_GET['o']=='add') { ?> checked <?php } ?> ><b>Add</b>
+<input type="radio" name="op" value="sub" <?php if(@$_GET['o']=='sub') { ?> checked <?php } ?> ><b>Subtract</b> 
+<input type="radio" name="op" value="multiply" <?php if(@$_GET['o']=='multiply') { ?> checked <?php } ?> ><b>Multiply</b> 
+<input type="radio" name="op" value="divide" <?php if(@$_GET['o']=='divide') { ?> checked <?php } ?> ><b>Divide</b>
+</td>
+
+
+</tr>
+<tr>
+
+<td>Result</td>
+<td><input type="text" name="result" readonly="readonly" placeholder="result" value="<?php echo @$_GET['r'] ?>"></td>
+</tr>
+
+<tr>
+<td colspan="2" align="center"><input type="submit" value="Calculate" name="cal"></td>
+</tr>
+</table>
+</form>
+</center>
+</body>
+</html>
